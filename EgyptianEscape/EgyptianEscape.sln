@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgyptianEscape", "EgyptianEscape.csproj", "{1CF1327B-0D47-4810-9C2B-7DF9000540AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgyptianEscape.Domain", "..\EgyptianEscape.Domain\EgyptianEscape.Domain.csproj", "{69955338-81FA-4FD5-8E2F-C054E8213E8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgyptianEscape.Application", "..\EgyptianEscape.Application\EgyptianEscape.Application.csproj", "{580D14ED-5494-404B-9008-060715916A66}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EgyptianEscape.Infrastructure", "..\EgyptianEscape.Infrastructure\EgyptianEscape.Infrastructure.csproj", "{F6CB8C3F-3D9D-4F55-84EB-2EF87C464622}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1CF1327B-0D47-4810-9C2B-7DF9000540AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CF1327B-0D47-4810-9C2B-7DF9000540AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CF1327B-0D47-4810-9C2B-7DF9000540AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CF1327B-0D47-4810-9C2B-7DF9000540AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69955338-81FA-4FD5-8E2F-C054E8213E8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69955338-81FA-4FD5-8E2F-C054E8213E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69955338-81FA-4FD5-8E2F-C054E8213E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69955338-81FA-4FD5-8E2F-C054E8213E8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{580D14ED-5494-404B-9008-060715916A66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{580D14ED-5494-404B-9008-060715916A66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{580D14ED-5494-404B-9008-060715916A66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{580D14ED-5494-404B-9008-060715916A66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6CB8C3F-3D9D-4F55-84EB-2EF87C464622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6CB8C3F-3D9D-4F55-84EB-2EF87C464622}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6CB8C3F-3D9D-4F55-84EB-2EF87C464622}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6CB8C3F-3D9D-4F55-84EB-2EF87C464622}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {92F74CA0-20E5-4256-959C-6A24A2D618F7}
+	EndGlobalSection
+EndGlobal

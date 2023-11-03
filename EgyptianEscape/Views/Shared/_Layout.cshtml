@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>@ViewData["Title"] - EgyptianEscape</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+      <link rel="stylesheet" href="~/EgyptianEscape.styles.css" asp-append-version="true" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+      <link rel="stylesheet" href="~/css//spinner.css" />
+      <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" integrity="sha512-vKMx8UnXk60zUwyUnUPM3HbQo8QfmNx7+ltw8Pm5zLusl1XIfwcxo8DbWCqMGKaWeNxWA8yrx5v3SaVpMvR3CA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel ="stylesheet" href="~/css/apexcharts.css" /> 
+  </head>
+   <body>
+      <header>
+         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow ">
+            <div class="container-fluid">
+               <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+               <img src="~/Images/resort.png" style="width:35px"/>
+               </a>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+               </button>
+               <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                  <ul class="navbar-nav flex-grow-1">
+                     <li class="nav-item">
+                        <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                     </li>
+                     @if(User.IsInRole(SD.Role_Admin))
+                     {
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Content Management
+                        </a>
+                        <ul class="dropdown-menu">
+                           <li><a class="dropdown-item " asp-area="" asp-controller="Villa" asp-action="Index">Villa</a></li>
+                           <li> <a class="dropdown-item " asp-area="" asp-controller="VillaNumber" asp-action="Index">Villa Number</a></li>
+                           <li>
+                              <hr class="dropdown-divider">
+                           </li>
+                           <li><a class="dropdown-item " asp-area="" asp-controller="Amenity" asp-action="Index">Amenities</a></li>
+                           <li><a class="dropdown-item " asp-area="" asp-controller="Booking" asp-route-status="@SD.StatusApproved" asp-action="Index">Bookings</a></li>
+                        </ul>
+                     </li>
+                     }
+                     else
+                     {
+                     <li class="nav-item">
+                        <a class="nav-link" asp-controller="Booking" asp-route-status="@SD.StatusApproved" asp-action="Index">Manage Booking</a>
+                     </li>
+                     }
+                  </ul>
+                  <partial name="_LoginPartial" />
+               </div>
+            </div>
+         </nav>
+      </header>
+      <div class="">
+         <main role="main" class="">
+            <div class="loading spinner" style="display:none"></div>
+            <partial name="_Notification" />
+            @RenderBody()
+         </main>
+      </div>
+      <footer class="border-top footer text-muted">
+         <div class="container text-center">
+            &copy; 2023 - EgyptianEscape 
+         </div>
+      </footer>
+      @*jquery-ajax-unobtrusive@3.2.6*@ 
+         
+      <script src="~/lib/jquery/dist/jquery.min.js"></script>
+      <script src="~/js/site.js" asp-append-version="true"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js" integrity="sha512-sH8JPhKJUeA9PWk3eOcOl8U+lfZTgtBXD41q6cO/slwxGHCxKcW45K4oPCUhHG7NMB4mbKEddVmPuTXtpbCbFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" asp-append-version="true"></script>
+      <script src="~/js/apexcharts.js"></script>
+
+      @*<script src="~/js/jquery.unobtrusive-ajax.min.js"></script>*@
+      @await RenderSectionAsync("Scripts", required: false)
+   </body>
+</html>
