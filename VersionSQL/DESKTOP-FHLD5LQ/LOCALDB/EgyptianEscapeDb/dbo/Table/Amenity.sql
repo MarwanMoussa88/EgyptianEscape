@@ -1,0 +1,21 @@
+﻿/****** Object:  Table [dbo].[Amenity]    Committed by VersionSQL https://www.versionsql.com ******/
+
+CREATE TABLE [dbo].[Amenity](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](max) NOT NULL,
+	[Description] [nvarchar](max) NULL,
+	[VillaId] [int] NOT NULL,
+ CONSTRAINT [PK_Amenity] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+CREATE NONCLUSTERED INDEX [IX_Amenity_VillaId] ON [dbo].[Amenity]
+(
+	[VillaId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_EXISTING = OFF, ONLINE = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+ALTER TABLE [dbo].[Amenity]  WITH CHECK ADD  CONSTRAINT [FK_Amenity_Villa_VillaId] FOREIGN KEY([VillaId])
+REFERENCES [dbo].[Villa] ([Id])
+ON DELETE CASCADE
+ALTER TABLE [dbo].[Amenity] CHECK CONSTRAINT [FK_Amenity_Villa_VillaId]
